@@ -23,14 +23,14 @@ pipeline{
                     steps{
                           sh 'java -jar target/MyMavenApp1-1.0-SNAPSHOT.jar'
                           }
-            }
-}
+                  }
+          }
 post{
-success{
-echo'Build success'
-}
-failure{
-echo'Build failure'
-}
-}
+    success{
+            echo'Build success'
+          }
+    failure{
+            echo'Build failure'
+          }          
+    }
 }
