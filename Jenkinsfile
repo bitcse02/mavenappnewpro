@@ -4,26 +4,22 @@ pipeline{
     maven'Maven'
   }
   stages{
-    stage('Checkout')
-    {
+    stage('Checkout'){
       steps{
         git branch:'master',url:'https://github.com/bitcse02/mavenappnewpro.git'
       }
     }
-    stage('Build')
-    {
+    stage('Build'){
       steps{
         sh'mvn clean package'
       }
     }
-    stage('Test')
-    {
+    stage('Test'){
       steps{
         sh'mvn test'
       }
     }
-    stage('Run')
-    {
+    stage('Run'){
       steps{
         sh'java -jar target/MyMavenApp1-1.0-SNAPSHOT.jar'
       }
