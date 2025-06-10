@@ -24,14 +24,14 @@ pipeline{
                           sh 'java -jar target/MyMavenApp1-1.0-SNAPSHOT.jar'
                           }
                   }
-        }
-post{
-    success{
-            echo'Build success'
+                }
+            post{
+                  success{
+                          echo'Build success'
+                        }
+                  failure{
+                          echo'Build failure'
+                      }          
           }
-    failure{
-            echo'Build failure'
-          }          
-    }
 }
 
